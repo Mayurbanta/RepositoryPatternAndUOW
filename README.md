@@ -1,5 +1,8 @@
 
 # C# Repository Pattern and Unit of work with EF Core 5
+## EF Core scaffolding    
+Database: Northwind sample Database by Microsoft
+
 
 ## EF Core scaffolding
 
