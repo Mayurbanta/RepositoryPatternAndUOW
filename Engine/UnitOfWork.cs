@@ -10,17 +10,14 @@ namespace Engine
 {
     public class UnitOfWork : IDisposable
     {
-        private NorthwindContext context = new();
+        private readonly NorthwindContext _context = new();
 
-        private GenericRepository<Customer> _customerRepository;
-        public GenericRepository<Customer> CustomerRepository
+        private IGenericRepository<Customer> _customerRepository;
+        public IGenericRepository<Customer> CustomerRepository
         {
             get
             {
-                if (this._customerRepository == null)
-                {
-                    this._customerRepository = new GenericRepository<Customer>(context);
-                }
+                this._customerRepository ??= new GenericRepository<Customer>(_context);
 
                 return _customerRepository;
             }
@@ -28,7 +25,7 @@ namespace Engine
 
         public void Save()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
 
 
