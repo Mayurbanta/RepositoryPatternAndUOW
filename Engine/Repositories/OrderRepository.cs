@@ -26,7 +26,7 @@ namespace Engine.Repositories
         }
 
 
-        public Order GetOrderShippingViaDetail(ShipVia shipVia)
+        public Order GetOrderFromShipVia(ShipVia shipVia)
         {
             return _context.Orders.FirstOrDefault(x => x.ShipVia == (int?)shipVia);
         }

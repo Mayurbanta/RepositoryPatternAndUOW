@@ -37,7 +37,7 @@ namespace RepositoryPatternUOW
             //var connectionString = Configuration["ConnectionStrings:NorthwindConnStr"];
             var connectionString = Environment.GetEnvironmentVariable("ConnectionStrings:NorthwindConnStr").Replace(@"\\", @"\");
             services.AddDbContext<NorthwindContext>(o => o.UseSqlServer(@connectionString));
-            services.AddScoped<UnitOfWork>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
             services.AddControllers();

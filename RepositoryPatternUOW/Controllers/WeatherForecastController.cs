@@ -18,9 +18,9 @@ namespace RepositoryPatternUOW.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, UnitOfWork unitOfWork )
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IUnitOfWork unitOfWork )
         {
             _logger = logger;
             this._unitOfWork = unitOfWork;
@@ -30,7 +30,7 @@ namespace RepositoryPatternUOW.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             //_unitOfWork.CustomerRepository.GetById("ALFKI")
-            //_unitOfWork.OrderRepository.GetOrderShippingViaDetail(Engine.Repositories.ShipVia.UnitedPackage)
+            //_unitOfWork.OrderRepository.GetOrderFromShipVia(Engine.Repositories.ShipVia.UnitedPackage)
 
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

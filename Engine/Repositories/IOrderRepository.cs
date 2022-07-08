@@ -8,6 +8,6 @@ namespace Engine.Repositories
 {
     public interface IOrderRepository: IGenericRepository<Order>
     {
-        Order GetOrderShippingViaDetail(ShipVia shipVia);
+        Order GetOrderFromShipVia(ShipVia shipVia);
     }
 }
