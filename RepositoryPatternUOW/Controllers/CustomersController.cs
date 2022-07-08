@@ -14,10 +14,10 @@ namespace RepositoryPatternUOW.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<CustomersController> _logger;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CustomersController(ILogger<WeatherForecastController> logger, IUnitOfWork unitOfWork)
+        public CustomersController(ILogger<CustomersController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
             this._unitOfWork = unitOfWork;
@@ -35,6 +35,11 @@ namespace RepositoryPatternUOW.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            //_unitOfWork.CustomerRepository.GetById("ALFKI")
+            //_unitOfWork.OrderRepository.GetOrderFromShipVia(Engine.Repositories.ShipVia.UnitedPackage)
+
+            
+
             var customers = _unitOfWork.CustomerRepository.Get(null,null,"");
 
             return Ok(customers);
@@ -42,9 +47,19 @@ namespace RepositoryPatternUOW.Controllers
 
         // GET api/<CustomersController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(string id)
         {
-            return "value";
+            var customer = _unitOfWork.CustomerRepository
+                .Get(x => x.CustomerId.Equals(id), null, "")
+                .FirstOrDefault();
+
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(customer);
+
         }
 
         // POST api/<CustomersController>
