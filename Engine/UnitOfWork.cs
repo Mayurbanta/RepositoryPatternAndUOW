@@ -13,15 +13,27 @@ namespace Engine
         private readonly NorthwindContext _context = new();
 
         private IGenericRepository<Customer> _customerRepository;
+
+        private IOrderRepository _orderRepository;
+
         public IGenericRepository<Customer> CustomerRepository
         {
             get
             {
-                this._customerRepository ??= new GenericRepository<Customer>(_context);
-
+                _customerRepository ??= new GenericRepository<Customer>(_context);
                 return _customerRepository;
             }
         }
+
+        public IOrderRepository OrderRepository
+        {
+            get
+            {
+                _orderRepository ??= new OrderRepository(_context);
+                return _orderRepository;
+            }
+        }
+
 
         public void Save()
         {

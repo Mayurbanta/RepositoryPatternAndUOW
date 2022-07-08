@@ -30,6 +30,7 @@ namespace RepositoryPatternUOW.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             //_unitOfWork.CustomerRepository.GetById("ALFKI")
+            //_unitOfWork.OrderRepository.GetOrderShippingViaDetail(Engine.Repositories.ShipVia.UnitedPackage)
 
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
