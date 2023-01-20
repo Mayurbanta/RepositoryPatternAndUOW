@@ -33,12 +33,11 @@ namespace RepositoryPatternUOW
             //--- register the DbContext on the container, getting the connection string from
             //--- appSettings (note: use this during development; in a production environment,
             //--- it's better to store the connection string in an environment variable)
-
+            
             //var connectionString = Configuration["ConnectionStrings:NorthwindConnStr"];
             var connectionString = Environment.GetEnvironmentVariable("ConnectionStrings:NorthwindConnStr").Replace(@"\\", @"\");
             services.AddDbContext<NorthwindContext>(o => o.UseSqlServer(@connectionString));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

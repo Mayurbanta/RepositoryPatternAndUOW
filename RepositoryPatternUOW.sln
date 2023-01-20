@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryPatternUOW", "RepositoryPatternUOW\RepositoryPatternUOW.csproj", "{D0E16A89-97BD-41DE-9A21-93DE2C39170F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryPatternUOW", "RepositoryPatternUOW\RepositoryPatternUOW.csproj", "{D0E16A89-97BD-41DE-9A21-93DE2C39170F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{E5A907FE-DFD0-4F35-881A-AF584711D13D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Engine", "Engine\Engine.csproj", "{E5A907FE-DFD0-4F35-881A-AF584711D13D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestswithInMemoryEF", "TestswithInMemoryEF\TestswithInMemoryEF.csproj", "{D61FF4FC-3511-4FB2-BF80-C82A119F2AEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E5A907FE-DFD0-4F35-881A-AF584711D13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5A907FE-DFD0-4F35-881A-AF584711D13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5A907FE-DFD0-4F35-881A-AF584711D13D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61FF4FC-3511-4FB2-BF80-C82A119F2AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61FF4FC-3511-4FB2-BF80-C82A119F2AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61FF4FC-3511-4FB2-BF80-C82A119F2AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61FF4FC-3511-4FB2-BF80-C82A119F2AEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
