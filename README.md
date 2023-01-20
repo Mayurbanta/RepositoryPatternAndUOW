@@ -17,3 +17,5 @@ Scaffold-DbContext "Your connection string here" Microsoft.EntityFrameworkCore.S
 
 ## For Using Environment variables  
 Add environment variables in Windows and restart Visual Studio 
+
+## Project for EF Core In Memory database for Unit testing
